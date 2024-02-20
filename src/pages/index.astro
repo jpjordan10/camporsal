@@ -1,0 +1,20 @@
+---
+import BrandCarrousel from "../components/BrandCarrousel.astro";
+import CarrouselHome from "../components/CarrouselHome.astro";
+import CategoryMenu from "../components/CategoryMenu.astro";
+import FeaturedProducts from "../components/FeaturedProducts.astro";
+import ServiceList from "../components/ServiceList.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="CIA CAMPORSAL | Inicio">
+  <main class="flex flex-col items-center overflow-auto">
+    <CarrouselHome />
+    <div class="flex flex-col items-center w-full gap-8 lg:w-3/4">
+      <CategoryMenu />
+      <FeaturedProducts />
+      <BrandCarrousel />
+      <ServiceList />
+    </div>
+  </main>
+</Layout>

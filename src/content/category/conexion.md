@@ -1,0 +1,4 @@
+---
+name: "Conexion"
+pluralName: "Conexiones"
+---

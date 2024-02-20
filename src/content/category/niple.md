@@ -1,0 +1,4 @@
+---
+name: "Niple"
+pluralName: "Niples"
+---

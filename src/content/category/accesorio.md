@@ -1,0 +1,4 @@
+---
+name: "Accesorio"
+pluralName: "Accesorios"
+---

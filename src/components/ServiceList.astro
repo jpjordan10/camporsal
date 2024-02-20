@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const services = await getCollection("service")
+---
+
+<!-- TODO: Check responsiveness -->
+<section class="grid grid-rows-[auto_minmax(0,_1fr)] w-full gap-4">
+  <h2 class="p-4 lg:p-0 text-2xl uppercase self-center">Servicios</h2>
+  <div
+    class="py-2 grid gap-4 grid-flow-col grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))] auto-cols-[minmax(16rem,_1fr)] overflow-x-auto"
+  >
+    {
+      // TODO: Check h3
+      services.map((i) => (
+        <article class="group flex flex-col border rounded-lg border-secondary cursor-pointer">
+          <div class="rounded-t-lg h-44 w-full bg-slate-200 group-hover:bg-slate-950" />
+          <Image src={i.data.image} alt="A bird sitting on a nest of eggs." />
+          <div class="bg-primary p-4 rounded-b-lg">
+            <h3 class="capitalize transition duration-300 text-white">
+              {i.data.name}
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white" />
+            </h3>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
