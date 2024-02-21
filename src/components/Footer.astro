@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+
+const services = await getCollection("service");
+const categories = await getCollection("category");
+---
+
+<footer class="bg-secondary w-full flex justify-center text-gradient pt-8 pb-4">
+  <div class="lg:w-3/4 grid grid-cols-12 gap-4">
+    <div class="col-span-6 flex flex-col gap-2">
+      <span class="text-2xl font-semibold whitespace-nowrap text-white"
+        >CAMPORSAL</span
+      >
+      <p class="text-subgradient text-xs">C.I.A. CAMPORSAL</p>
+      <!-- Cambiar este texto -->
+      <p class="text-subgradient text-xs">
+        Somos una empresa que se dedica a la importación y distribución de
+        accesorios de sistema contra incendio, gas, agua y vapor.
+      </p>
+      <!-- <p class="text-subgradient text-xs">+51 938 382 634</p>
+      <p class="text-subgradient text-xs">contacto@ciacamporsal.com</p> -->
+    </div>
+    <div class="col-span-2 items-end flex flex-col gap-2">
+      <p class="uppercase text-sm">Productos</p>
+      <ul class="text-end">
+        {
+          categories.map((i) => (
+            <li class="text-xs text-subgradient">{i.data.pluralName}</li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="col-span-2 items-end flex flex-col gap-2">
+      <p class="uppercase text-sm">Servicios</p>
+      <ul class="text-end">
+        {
+          services.map((i) => (
+            <li class="text-xs text-subgradient">{i.data.name}</li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="col-span-2 items-end flex flex-col justify-between">
+      <div class="flex flex-col items-end gap-2">
+        <p class="uppercase text-sm">Nosotros</p>
+        <ul class="text-end">
+          <li class="text-xs text-subgradient">Acerca de nosotros</li>
+          <li class="text-xs text-subgradient">Contacto</li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-end">
+        <p class="text-subgradient text-xs">+51 938 382 634</p>
+        <p class="text-subgradient text-xs">contacto@ciacamporsal.com</p>
+      </div>
+    </div>
+    <hr class="col-span-12 my-2 border-gray-200" />
+    <p class="col-span-12 text-sm text-center text-gradient">
+      © Copyright 2021, All Rights Reserved by C.I.A. CAMPORSAL
+    </p>
+  </div>
+</footer>
