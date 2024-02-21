@@ -7,7 +7,7 @@ const categories = await getCollection("category");
 
 <footer class="bg-secondary w-full flex justify-center text-gradient pt-8 pb-4">
   <div class="lg:w-3/4 grid grid-cols-12 gap-4">
-    <div class="col-span-6 flex flex-col gap-2">
+    <div class="col-span-12 p-4 lg:p-0 lg:col-span-6 flex flex-col gap-2">
       <span class="text-2xl font-semibold whitespace-nowrap text-white"
         >CAMPORSAL</span
       >
@@ -20,9 +20,11 @@ const categories = await getCollection("category");
       <!-- <p class="text-subgradient text-xs">+51 938 382 634</p>
       <p class="text-subgradient text-xs">contacto@ciacamporsal.com</p> -->
     </div>
-    <div class="col-span-2 items-end flex flex-col gap-2">
+    <div
+      class="col-span-12 sm:col-span-4 lg:col-span-2 items-center lg:items-end flex flex-col gap-2"
+    >
       <p class="uppercase text-sm">Productos</p>
-      <ul class="text-end">
+      <ul class="text-center lg:text-end">
         {
           categories.map((i) => (
             <li class="text-xs text-subgradient">{i.data.pluralName}</li>
@@ -30,9 +32,11 @@ const categories = await getCollection("category");
         }
       </ul>
     </div>
-    <div class="col-span-2 items-end flex flex-col gap-2">
+    <div
+      class="col-span-12 sm:col-span-4 lg:col-span-2 items-center lg:items-end flex flex-col gap-2"
+    >
       <p class="uppercase text-sm">Servicios</p>
-      <ul class="text-end">
+      <ul class="text-center lg:text-end">
         {
           services.map((i) => (
             <li class="text-xs text-subgradient">{i.data.name}</li>
@@ -40,22 +44,27 @@ const categories = await getCollection("category");
         }
       </ul>
     </div>
-    <div class="col-span-2 items-end flex flex-col justify-between">
-      <div class="flex flex-col items-end gap-2">
+    <div
+      class="col-span-12 sm:col-span-4 lg:col-span-2 items-center lg:items-end flex flex-col justify-between gap-2"
+    >
+      <div class="flex flex-col items-center lg:items-end gap-2">
         <p class="uppercase text-sm">Nosotros</p>
-        <ul class="text-end">
+        <ul class="text-center lg:text-end">
           <li class="text-xs text-subgradient">Acerca de nosotros</li>
           <li class="text-xs text-subgradient">Contacto</li>
         </ul>
       </div>
-      <div class="flex flex-col items-end">
+      <div class="flex flex-col items-center lg:items-end">
         <p class="text-subgradient text-xs">+51 938 382 634</p>
         <p class="text-subgradient text-xs">contacto@ciacamporsal.com</p>
       </div>
     </div>
     <hr class="col-span-12 my-2 border-gray-200" />
-    <p class="col-span-12 text-sm text-center text-gradient">
-      © Copyright 2021, All Rights Reserved by C.I.A. CAMPORSAL
-    </p>
+    <div class="col-span-12  text-xs flex justify-between flex-col lg:flex-row gap-4">
+      <p class="lg:p-0 text-center text-gradient">
+        © Copyright 2024, Todos los derechos reservados por C.I.A. CAMPORSAL
+      </p>
+      <p class="lg:p-0 text-center text-gradient">Hecho por JPJS</p>
+    </div>
   </div>
 </footer>
