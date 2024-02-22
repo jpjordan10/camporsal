@@ -26,8 +26,8 @@ const { title } = Astro.props;
   </head>
   <body class="grid grid-rows-[auto_minmax(0,_1fr)] h-screen">
     <Header />
-    <div class="flex flex-col w-full overflow-auto">
-      <main class="flex flex-col items-center">
+    <div class="flex flex-col justify-between w-full overflow-auto">
+      <main class="flex flex-col items-center flex-1">
         <slot />
       </main>
       <Footer />

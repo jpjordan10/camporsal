@@ -12,7 +12,8 @@ export default {
       primary: "#C80F15",
       secondary: "#232120",
       gradient: "#d3d3d3",
-      subgradient: "#b2b2b2"
+      subgradient: "#b2b2b2",
+      secondarygradient: '#595959'
     },
     extend: {
       animation: {
