@@ -7,7 +7,7 @@ const services = await getCollection("service");
 <nav class="bg-primary">
   <!-- max-w-screen-xl -->
   <div class="flex flex-wrap items-center justify-between mx-auto p-4">
-    <div class="flex flex-row gap-8">
+    <div class="flex flex-row gap-8 w-full justify-between sm:justify-normal sm:w-[unset]">
       <!-- BURGER START -->
       <button
         data-collapse-toggle="navbar-default"
@@ -34,10 +34,7 @@ const services = await getCollection("service");
       </button>
       <!-- BURGER END -->
       <!-- TODO: Cambiar flowbite -->
-      <a
-        href="/"
-        class="flex items-center space-x-3 rtl:space-x-reverse"
-      >
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <span
           class="self-center text-2xl font-semibold whitespace-nowrap text-white"
           >CAMPORSAL</span
@@ -45,7 +42,7 @@ const services = await getCollection("service");
       </a>
     </div>
 
-    <div class="flex flex-row gap-8">
+    <div class="flex flex-row w- gap-8 w-full justify-end sm:justify-normal sm:w-[unset]">
       <div class="hidden w-full lg:flex lg:items-center lg:w-auto">
         <ul
           class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-white rounded-lg lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
@@ -94,7 +91,7 @@ const services = await getCollection("service");
                   services.map((service) => (
                     <li>
                       <a
-                      href={`/servicios/${service.slug}/`}
+                        href={`/servicios/${service.slug}/`}
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         {service.data.name}
@@ -187,7 +184,7 @@ const services = await getCollection("service");
                 services.map((service) => (
                   <li>
                     <a
-                    href={`/servicios/${service.slug}/`}
+                      href={`/servicios/${service.slug}/`}
                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       {service.data.name}

@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 const categories = await getCollection("category");
 ---
 <!-- TODO: Soportar la cantidad de categorias, actualizar gird-cold -->
-<div class="sticky top-0 w-full h-20 bg-secondary grid grid-cols-5">
+<div class="sticky top-0 w-full h-20 bg-secondary grid grid-cols-2 sm:grid-cols-5">
   {
     categories.map((i) => (
       <div class="uppercase text-white  justify-self-center self-center">

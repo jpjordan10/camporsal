@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 
 const category = defineCollection({
   type: "content",
@@ -20,4 +20,9 @@ const service = defineCollection({
     }),
 });
 
-export const collections = { category, service };
+const product = defineCollection({
+  type: "content",
+  schema: z.object({ name: z.string(), category: reference("category") }),
+});
+
+export const collections = { category, service, product };
