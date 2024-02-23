@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import { CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const products = await getCollection("product");
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: product,
+  }));
+}
+type Props = CollectionEntry<"product">;
+
+const product = Astro.props;
+---
+
+<Layout title={`CIA CAMPORSAL | ${product.data.name}`}>
+  <article
+    class="h-full w-full grid grid-cols-12 gap-4 lg:gap-8 lg:w-3/4 py-2 sm:p-4 lg:py-12"
+  >
+    <section class="col-span-12 md:col-span-6 self-center">
+      <Image
+        class={"w-full object-cover"}
+        src={product.data.image}
+        alt={product.data.imageAlt}
+      />
+    </section>
+    <section class="col-span-12 md:col-span-6 self-center flex flex-col gap-4">
+      <h1 class="text-5xl text-secondary">{product.data.name}</h1>
+      <p class="text-base text-secondarygradient">{product.data.description}</p>
+      <div class="grid grid-cols-12 gap-4">
+        <div
+          class="bg-subgradient text-white h-8 rounded-md col-span-12 lg:col-span-6 flex items-center justify-center"
+        >
+          CAT Button
+        </div>
+        <div
+          class="bg-gradient text-white h-8 rounded-md col-span-12 lg:col-span-6 flex items-center justify-center"
+        >
+          PRIMARY Button
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>

@@ -22,7 +22,15 @@ const service = defineCollection({
 
 const product = defineCollection({
   type: "content",
-  schema: z.object({ name: z.string(), category: reference("category") }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      category: reference("category"),
+      image: image(),
+      imageAlt: z.string(),
+      description: z.string(),
+      featured: z.boolean()
+    }),
 });
 
 export const collections = { category, service, product };
