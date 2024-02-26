@@ -26,8 +26,12 @@ const categories = await getCollection("category");
       <p class="uppercase text-sm">Productos</p>
       <ul class="text-center lg:text-end">
         {
-          categories.map((i) => (
-            <li class="text-xs text-subgradient">{i.data.pluralName}</li>
+          categories.map((category) => (
+            <li class="text-xs text-subgradient cursor-pointer">
+              <a href={`/categorias/${category.slug}/`}>
+                {category.data.pluralName}
+              </a>
+            </li>
           ))
         }
       </ul>
@@ -38,8 +42,10 @@ const categories = await getCollection("category");
       <p class="uppercase text-sm">Servicios</p>
       <ul class="text-center lg:text-end">
         {
-          services.map((i) => (
-            <li class="text-xs text-subgradient">{i.data.name}</li>
+          services.map((service) => (
+            <li class="text-xs text-subgradient cursor-pointer">
+              <a href={`/servicios/${service.slug}/`}>{service.data.name}</a>
+            </li>
           ))
         }
       </ul>
@@ -60,7 +66,9 @@ const categories = await getCollection("category");
       </div>
     </div>
     <hr class="col-span-12 my-2 border-gray-200" />
-    <div class="col-span-12  text-xs flex justify-between flex-col lg:flex-row gap-4">
+    <div
+      class="col-span-12 text-xs flex justify-between flex-col lg:flex-row gap-4"
+    >
       <p class="lg:p-0 text-center text-gradient">
         © Copyright 2024, Todos los derechos reservados por C.I.A. CAMPORSAL
       </p>

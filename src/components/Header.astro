@@ -8,7 +8,9 @@ const categories = await getCollection("category");
 <nav class="bg-primary">
   <!-- max-w-screen-xl -->
   <div class="flex flex-wrap items-center justify-between mx-auto p-4">
-    <div class="flex flex-row gap-8 w-full justify-between sm:justify-normal sm:w-[unset]">
+    <div
+      class="flex flex-row gap-8 w-full justify-between sm:justify-normal sm:w-[unset]"
+    >
       <!-- BURGER START -->
       <button
         data-collapse-toggle="navbar-default"
@@ -43,63 +45,65 @@ const categories = await getCollection("category");
       </a>
     </div>
 
-    <div class="flex flex-row w- gap-8 w-full justify-end sm:justify-normal sm:w-[unset]">
+    <div
+      class="flex flex-row w- gap-8 w-full justify-end sm:justify-normal sm:w-[unset]"
+    >
       <div class="hidden w-full lg:flex lg:items-center lg:w-auto">
         <ul
           class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-white rounded-lg lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
         >
-        <li>
-          <button
-            id="dropdownProductLink"
-            data-dropdown-toggle="dropdownProduct"
-            class="flex items-center w-full justify-between py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
-            >PRODUCTOS <svg
-              class="w-2.5 h-2.5 ms-2.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6"
+          <li>
+            <button
+              id="dropdownProductLink"
+              data-dropdown-toggle="dropdownProduct"
+              class="flex items-center w-full justify-between py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
+              >PRODUCTOS <svg
+                class="w-2.5 h-2.5 ms-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"></path>
+              </svg></button
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 4 4 4-4"></path>
-            </svg></button
-          >
-          <!-- Dropdown menu -->
-          <div
-            id="dropdownProduct"
-            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-          >
-            <ul
-              class="py-2 text-sm text-gray-700 dark:text-gray-200"
-              aria-labelledby="dropdownLargeButton"
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownProduct"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
             >
-              {
-                categories.map((category) => (
-                  <li>
-                    <a
-                      href={`/categorias/${category.slug}/`}
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      {category.data.pluralName}
-                    </a>
-                  </li>
-                ))
-              }
-              <li>
-                <a
-                  href="/productos"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Ver Todos
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownLargeButton"
+              >
+                {
+                  categories.map((category) => (
+                    <li>
+                      <a
+                        href={`/categorias/${category.slug}/`}
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        {category.data.pluralName}
+                      </a>
+                    </li>
+                  ))
+                }
+                <li>
+                  <a
+                    href="/productos"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Ver Todos
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
           <li>
             <button
               id="dropdownServiceLink"
@@ -141,14 +145,6 @@ const categories = await getCollection("category");
                     </li>
                   ))
                 }
-                <li>
-                  <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Ver Todos
-                  </a>
-                </li>
               </ul>
             </div>
           </li>
@@ -186,58 +182,58 @@ const categories = await getCollection("category");
       <ul
         class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-white rounded-lg lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
       >
-      <li>
-        <button
-          id="dropdownProductLink"
-          data-dropdown-toggle="dropdownProductLink2"
-          class="flex items-center w-full justify-between py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
-          >PRODUCTOS <svg
-            class="w-2.5 h-2.5 ms-2.5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
+        <li>
+          <button
+            id="dropdownProductLink"
+            data-dropdown-toggle="dropdownProductLink2"
+            class="flex items-center w-full justify-between py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
+            >PRODUCTOS <svg
+              class="w-2.5 h-2.5 ms-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"></path>
+            </svg></button
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 4 4 4-4"></path>
-          </svg></button
-        >
-        <!-- Dropdown menu -->
-        <div
-          id="dropdownProductLink2"
-          class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-        >
-          <ul
-            class="py-2 text-sm text-gray-700 dark:text-gray-200"
-            aria-labelledby="dropdownLargeButton"
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownProductLink2"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
           >
-            {
-              categories.map((category) => (
-                <li>
-                  <a
-                    href={`/categorias/${category.slug}/`}
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    {category.data.pluralName}
-                  </a>
-                </li>
-              ))
-            }
-            <li>
-              <a
-                href="/productos"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                Ver Todos
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownLargeButton"
+            >
+              {
+                categories.map((category) => (
+                  <li>
+                    <a
+                      href={`/categorias/${category.slug}/`}
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      {category.data.pluralName}
+                    </a>
+                  </li>
+                ))
+              }
+              <li>
+                <a
+                  href="/productos"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Ver Todos
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
         <li>
           <button
             id="dropdownServiceLink"
@@ -279,14 +275,6 @@ const categories = await getCollection("category");
                   </li>
                 ))
               }
-              <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Ver Todos
-                </a>
-              </li>
             </ul>
           </div>
         </li>
