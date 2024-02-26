@@ -84,14 +84,14 @@ const categories = await getCollection("category");
                       href={`/categorias/${category.slug}/`}
                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      {category.data.name}
+                      {category.data.pluralName}
                     </a>
                   </li>
                 ))
               }
               <li>
                 <a
-                  href="#"
+                  href="/productos"
                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   Ver Todos
@@ -222,14 +222,14 @@ const categories = await getCollection("category");
                     href={`/categorias/${category.slug}/`}
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
-                    {category.data.name}
+                    {category.data.pluralName}
                   </a>
                 </li>
               ))
             }
             <li>
               <a
-                href="#"
+                href="/productos"
                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Ver Todos

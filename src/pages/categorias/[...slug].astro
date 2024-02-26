@@ -16,13 +16,11 @@ const category = Astro.props;
 const products = (await getCollection("product")).filter(
   (x) => x.data.category.slug === category.slug
 );
-
-console.log(products);
 ---
 
 <Layout title={`CIA CAMPORSAL | ${category.data.name}`}>
   <div class="flex flex-col flex-1 w-full lg:w-3/4 gap-8 p-4">
-    <h1 class="text-5xl text-secondary break-all">{category.data.pluralName}</h1>
+    <h1 class="text-5xl text-secondary break-all uppercase">{category.data.pluralName}</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Id cursus metus
