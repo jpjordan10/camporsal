@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 
 const services = await getCollection("service");
+const categories = await getCollection("category");
 ---
 
 <nav class="bg-primary">
@@ -47,17 +48,58 @@ const services = await getCollection("service");
         <ul
           class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-white rounded-lg lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
         >
-          <li>
-            <a
-              href="#"
-              class="block py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
-              >PRODUCTOS</a
+        <li>
+          <button
+            id="dropdownProductLink"
+            data-dropdown-toggle="dropdownProduct"
+            class="flex items-center w-full justify-between py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
+            >PRODUCTOS <svg
+              class="w-2.5 h-2.5 ms-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
             >
-          </li>
-          <!-- display: flex;
-          align-items: center;
-          width: 100%;
-          justify-content: space-between; -->
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"></path>
+            </svg></button
+          >
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownProduct"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownLargeButton"
+            >
+              {
+                categories.map((category) => (
+                  <li>
+                    <a
+                      href={`/categorias/${category.slug}/`}
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      {category.data.name}
+                    </a>
+                  </li>
+                ))
+              }
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Ver Todos
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
           <li>
             <button
               id="dropdownServiceLink"
@@ -144,17 +186,62 @@ const services = await getCollection("service");
       <ul
         class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-white rounded-lg lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
       >
-        <li>
-          <a
-            href="#"
-            class="block py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
-            >PRODUCTOS</a
+      <li>
+        <button
+          id="dropdownProductLink"
+          data-dropdown-toggle="dropdownProductLink2"
+          class="flex items-center w-full justify-between py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
+          >PRODUCTOS <svg
+            class="w-2.5 h-2.5 ms-2.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
           >
-        </li>
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"></path>
+          </svg></button
+        >
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownProductLink2"
+          class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownLargeButton"
+          >
+            {
+              categories.map((category) => (
+                <li>
+                  <a
+                    href={`/categorias/${category.slug}/`}
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    {category.data.name}
+                  </a>
+                </li>
+              ))
+            }
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Ver Todos
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
         <li>
           <button
             id="dropdownServiceLink"
-            data-dropdown-toggle="dropdownService2"
+            data-dropdown-toggle="dropdownServiceLink2"
             class="flex items-center w-full justify-between py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
             >SERVICIOS <svg
               class="w-2.5 h-2.5 ms-2.5"
@@ -173,7 +260,7 @@ const services = await getCollection("service");
           >
           <!-- Dropdown menu -->
           <div
-            id="dropdownService2"
+            id="dropdownServiceLink2"
             class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
           >
             <ul

@@ -71,7 +71,6 @@ export default function FilteredProducts({
                     <img
                       className="w-full h-full object-cover  transition duration-300 ease-in-out group-hover:rotate-6 group-hover:scale-125"
                       src={i.data.image.src}
-                      loading="lazy"
                     ></img>
                   </div>
                   <h3 className="capitalize">{i.data.name}</h3>
