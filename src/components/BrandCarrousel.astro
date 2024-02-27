@@ -70,16 +70,26 @@ const images = [
       transform: translateX(-200%);
     }
   }
-
 </style>
 <section class="grid grid-rows-[auto_minmax(0,_1fr)] w-full gap-4">
   <h2 class="p-4 lg:p-0 text-2xl uppercase self-center">Marcas</h2>
-  <div class="flex overflow-hidden gap-4 scroll imgBox w-full" style="--time:60s">
+  <div
+    class="flex overflow-hidden gap-4 scroll imgBox w-full"
+    style="--time:60s"
+  >
     <div class="flex items-center justify-center gap-4">
-      {images.map((item) => <Image class="max-w-32 scale-75" src={item.image} alt={item.alt} />)}
+      {
+        images.map((item) => (
+          <Image class="max-w-32 scale-75" src={item.image} alt={item.alt} />
+        ))
+      }
     </div>
     <div class="flex items-center justify-center gap-4">
-      {images.map((item) => <Image class="max-w-32 scale-75" src={item.image} alt={item.alt} />)}
+      {
+        images.map((item) => (
+          <Image class="max-w-32 scale-75" src={item.image} alt={item.alt} />
+        ))
+      }
     </div>
   </div>
 </section>
