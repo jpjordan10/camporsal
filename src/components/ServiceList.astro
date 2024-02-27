@@ -5,34 +5,33 @@ import { getCollection } from "astro:content";
 const services = await getCollection("service");
 ---
 
-<!-- TODO: Check responsiveness -->
 <section class="grid grid-rows-[auto_minmax(0,_1fr)] w-full gap-4">
   <h2 class="p-4 lg:p-0 text-2xl uppercase self-center">Servicios</h2>
   <div
     class="py-2 grid gap-4 grid-flow-col grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))] auto-cols-[minmax(16rem,_1fr)] overflow-x-auto"
   >
     {
-      // TODO: Check h3
       services.map((service) => (
-        <a href={`/servicios/${service.slug}/`} class="group">
-          <article class="group h-80 grid grid-rows-[minmax(0,_1fr)_auto] border rounded-lg border-secondary cursor-pointer">
-            <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat opacity-50 transition-opacity duration-500 brightness-90 group-hover:brightness-100 group-hover:opacity-100">
-              <Image
-                class={
-                  "w-full h-full object-cover  transition duration-300 ease-in-out group-hover:rotate-6 group-hover:scale-125"
-                }
-                src={service.data.image}
-                alt={service.data.imageAlt}
-              />
-            </div>
-            <div class="bg-primary p-4 rounded-b-lg">
-              <h3 class="capitalize transition duration-300 text-white">
-                {service.data.name}
-                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white" />
-              </h3>
-            </div>
-          </article>
-        </a>
+        <article class="group grid grid-rows-[minmax(0,_1fr)_auto] rounded-lg border border-gray-100 bg-white shadow-md cursor-pointer">
+          <a
+            class="flex rounded-t-lg h-60 overflow-hidden"
+            href={`/servicios/${service.slug}`}
+          >
+            <Image
+              class={
+                "w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110"
+              }
+              src={service.data.image}
+              alt={service.data.imageAlt}
+            />
+          </a>
+          <a class="p-4" href={`/servicios/${service.slug}`}>
+            <h3 class="text-xl tracking-tight transition duration-300">
+              {service.data.name}
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary" />
+            </h3>
+          </a>
+        </article>
       ))
     }
   </div>

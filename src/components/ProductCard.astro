@@ -13,14 +13,14 @@ const { product, customClass } = Astro.props;
 <article
   id={`${product.data.category.slug}-${product.slug}`}
   product-item
-  class={`flex w-full flex-col justify-between gap-4 overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md group ${customClass && customClass}`}
+  class={`group flex w-full flex-col justify-between gap-4 overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md ${customClass && customClass}`}
 >
   <a
     class="mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
     href={`/productos/${product.slug}`}
   >
     <Image
-      class="object-contain"
+      class="object-contain transition duration-300 ease-in-out group-hover:scale-110"
       src={product.data.image}
       alt={product.data.imageAlt}
     />
