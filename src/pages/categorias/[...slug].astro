@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-import ProductList from "../../components/ProductList.astro";
+import ProductCard from "../../components/ProductCard.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -36,6 +36,16 @@ const products = (await getCollection("product")).filter(
       hendrerit gravida. Nunc id cursus metus aliquam. Ultrices eros in cursus
       turpis massa tincidunt. Purus non enim praesent elementum facilisis.
     </p>
-    <ProductList products={products} />
+    <!-- <ProductList products={products} /> -->
+    <section class="grid grid-cols-12 gap-4">
+      {
+        products.map((product) => (
+          <ProductCard
+            product={product}
+            customClass="col-span-12 md:col-span-6 lg:col-span-4"
+          />
+        ))
+      }
+    </section>
   </div>
 </Layout>

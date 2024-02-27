@@ -1,9 +1,73 @@
 ---
 import { getCollection } from "astro:content";
-import FilteredProducts from "./FilteredProducts";
+import ProductCard from "../components/ProductCard.astro";
 
 const categories = await getCollection("category");
 const products = await getCollection("product");
 ---
 
-<FilteredProducts categories={categories} products={products} client:load />
+<style>
+  .active {
+    --tw-opacity: 1;
+    border-bottom-color: rgb(200 15 21 / var(--tw-opacity));
+    background-color: rgb(200 15 21 / var(--tw-opacity));
+    color: rgb(255 255 255 / var(--tw-opacity));
+  }
+</style>
+
+<section class="grid grid-rows-[auto_minmax(0,_1fr)] w-full gap-4">
+  <div class="grid grid-cols-1 lg:grid-cols-2">
+    <h2 class="p-4 lg:p-0 text-2xl uppercase self-center">
+      Productos Destacados
+    </h2>
+    <div
+      class="grid grid-cols-2 sm:grid-cols-5 lg:overflow-hidden gap-2 text-sm text-secondary"
+    >
+      {
+        categories.map((category, index) => (
+          <button
+            id={category.slug}
+            category-tab
+            class={`flex justify-center break-words py-2 px-4 cursor-pointer rounded-t-md  hover:border-b-primary hover:bg-primary hover:text-white rounded-md ${index === 0 && "active"}`}
+          >
+            {category.data.pluralName}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+  <div
+    class="py-2 grid gap-4 grid-flow-col grid-cols-[repeat(auto-fit,_minmax(16rem,_1fr))] auto-cols-[minmax(16rem,_1fr)] overflow-x-auto"
+  >
+    {products.map((product) => <ProductCard product={product} />)}
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll("[category-tab]");
+    const products = document.querySelectorAll("[product-item]");
+    let currentButton = null;
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const categoryId = button.id;
+
+        if (currentButton !== null) {
+          currentButton.classList.remove("active");
+        }
+
+        button.classList.add("active");
+        currentButton = button;
+
+        products.forEach((product) => {
+          product.id.includes(categoryId)
+            ? product.style.setProperty("display", "flex")
+            : product.style.setProperty("display", "none");
+        });
+      });
+    });
+
+    buttons[0].click();
+  });
+</script>
