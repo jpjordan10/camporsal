@@ -10,7 +10,7 @@ const categories = await getCollection("category");
     categories.map((category) => (
       <a
         href={`categorias/${category.slug}`}
-        class="uppercase text-white  justify-self-center self-center"
+        class="uppercase text-white  text-lg font-semibold justify-self-center self-center"
       >
         {category.data.pluralName}
       </a>
