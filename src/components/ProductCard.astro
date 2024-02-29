@@ -34,7 +34,7 @@ const { product, customClass } = Astro.props;
   </a>
   <div class="flex flex-col gap-4 px-5 pb-5">
     <a href={`/productos/${product.slug}`}>
-      <h3 class="text-xl tracking-tight transition duration-300">
+      <h3 class="text-xl font-bold tracking-tight transition duration-300">
         {product.data.name}
         <span
           class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"
@@ -108,7 +108,7 @@ const { product, customClass } = Astro.props;
     </div>
     <a
       href={`/productos/${product.slug}`}
-      class="flex items-center justify-center rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-secondarygradient focus:outline-none focus:ring-4 focus:ring-blue-300"
+      class="flex text-sm font-medium items-center justify-center rounded-md bg-secondary px-5 py-2.5 text-center  text-white hover:bg-secondary/70 focus:outline-none focus:ring-4 focus:ring-blue-300"
     >
       Ver Articulo
     </a>

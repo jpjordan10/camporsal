@@ -7,13 +7,17 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
+    fontFamily: {
+      coda: ["Coda Caption", "sans-serif"],
+      base: ["Schibsted Grotesk", "sans-serif"],
+    },
     colors: {
       ...colors,
       primary: "#C80F15",
       secondary: "#232120",
       gradient: "#d3d3d3",
       subgradient: "#b2b2b2",
-      secondarygradient: '#595959'
+      secondarygradient: "#595959",
     },
     extend: {
       animation: {

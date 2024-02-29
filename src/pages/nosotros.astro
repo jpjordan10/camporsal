@@ -1,0 +1,70 @@
+---
+import HeadquarterCard from "../components/HeadquarterCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="CIA CAMPORSAL | Nosotros">
+  <div
+    class="flex flex-col flex-1 w-full lg:w-3/4 p-4 lg:py-8 lg:px-0 gap-8 lg:gap-16"
+  >
+    <section class="grid grid-cols-12 w-full gap-2 lg:gap-8">
+      <div class="col-span-12 md:col-span-6 gap-4 flex flex-col">
+        <h1 class="text-5xl font-semibold">Mision</h1>
+        <p class="text-base">
+          Tenemos 20 años en el mercado en la industria ferretera y por nuestra
+          experiencia nos consideramos socios estratégicos de nuestros cliente
+          brindamos orientación, técnica en la instalación de los sistemas
+          contra incendio - sistema de gas y aire - grifería domestica e
+          hidráulica. brindamos servicio de soldadura, torno y rosca. contamos
+          con una atención personalizada de alta calidad, nuestra entrega son
+          inmediatas debido a que ofrecemos el servicio de transporte.
+        </p>
+      </div>
+      <div
+        class="col-span-12 md:col-span-6 place-self-center flex items-center"
+      >
+        <div class="h-28 w-28 bg-slate-400 shadow-sm"></div>
+      </div>
+    </section>
+    <section class="grid grid-cols-12 w-full gap-2 lg:gap-8">
+      <div
+        class="col-span-12 md:col-span-6 place-self-center flex items-center order-2 md:order-1"
+      >
+        <div class="h-28 w-28 bg-slate-400 shadow-sm"></div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-6 gap-4 flex flex-col order-1 md:order-2"
+      >
+        <h1 class="text-5xl font-semibold">Vision</h1>
+        <p class="text-base">
+          Ser líderes en la industria ferretera y estar siempre a la vanguardia
+          de la tecnología y así colaborar en el desarrollo de nuestro querido
+          Perú.
+        </p>
+      </div>
+    </section>
+    <section class="grid grid-cols-12 gap-2 lg:gap-8">
+      <h1 class="col-span-12 text-5xl font-semibold">Nuestras Sedes</h1>
+      <HeadquarterCard />
+      <HeadquarterCard />
+      <HeadquarterCard />
+    </section>
+    <section class="grid grid-cols-12 gap-2 lg:gap-8">
+      <div class="col-span-12 md:col-span-6 gap-4 flex flex-col">
+        <h1 class="text-5xl font-semibold">Empleos</h1>
+        <p class="text-base">
+          Trbaja con nosotros, envia tu CV a los siguientes correos
+        </p>
+      </div>
+      <div
+        class="col-span-12 md:col-span-6 md:place-self-center flex flex-col md:items-center"
+      >
+        <ul class="gap-4">
+          <li>rrhh@camporsal.com.pe</li>
+          <li>administracion@camporsal.com.pe</li>
+          <li>grupocamporsalrrhh@gmail.com</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</Layout>
