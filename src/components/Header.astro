@@ -1,4 +1,6 @@
 ---
+// import { Image } from "astro:assets";
+// import logo from "../images/assets/logo.png";
 import { getCollection } from "astro:content";
 
 const services = await getCollection("service");
@@ -37,6 +39,7 @@ const categories = await getCollection("category");
       <!-- BURGER END -->
       <!-- TODO: Cambiar flowbite -->
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <!-- <Image height={75} src={logo} alt={"Camporsal"} /> -->
         <span
           class="self-center text-2xl font-semibold whitespace-nowrap text-white font-coda"
           >CAMPORSAL</span
@@ -150,7 +153,7 @@ const categories = await getCollection("category");
           <li>
             <a
               href="/nosotros"
-              class="block py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
+              class="block py-2 px-3 text-lg font-semibold text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
               >NOSOTROS</a
             >
           </li>
@@ -280,7 +283,7 @@ const categories = await getCollection("category");
         <li>
           <a
             href="/nosotros"
-            class="block py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
+            class="block  text-lg font-semibold py-2 px-3 text-white rounded hover:bg-secondary lg:hover:bg-transparent lg:border-0 lg:hover:text-secondary lg:p-0"
             >NOSOTROS</a
           >
         </li>
